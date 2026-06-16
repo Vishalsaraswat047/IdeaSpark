@@ -1,0 +1,6 @@
+{
+  "name": "IdeaSpark AI",
+  "description": "An AI-powered innovation validation platform that transforms ideas into opportunities.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
