@@ -73,7 +73,7 @@ export default function NewIdeaForm({ onSubmit, isAnalyzing }: NewIdeaFormProps)
       <div className="text-center mb-10">
         <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-50 border border-brand-100 text-brand-700 rounded-full text-xs font-semibold mb-3 tracking-wide uppercase">
           <Sparkles size={14} className="animate-pulse" />
-          Powered by Gemini 3.5 AI
+          Powered by NVIDIA MiniMax M2.7
         </div>
         <h1 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-gray-900 mb-4">
           From Ideas to <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">Opportunities</span>
@@ -235,7 +235,7 @@ export default function NewIdeaForm({ onSubmit, isAnalyzing }: NewIdeaFormProps)
             </div>
 
             <div className="text-xs text-gray-400 max-w-xs mx-auto leading-relaxed">
-              Gemini is running competitive market scans, analyzing technological complexity and predicting business viability. This usually takes around 5-15 seconds.
+              AI is running competitive market scans, analyzing technological complexity and predicting business viability. This usually takes around 5-15 seconds.
             </div>
           </motion.div>
         )}

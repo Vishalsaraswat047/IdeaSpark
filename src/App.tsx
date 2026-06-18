@@ -339,7 +339,7 @@ export default function App() {
                   <span className="font-bold">Evaluation Suspended: </span>
                   {errorMessage}
                   <div className="mt-2 text-[10px] font-mono text-rose-600">
-                    Protip: Verify that your Gemini Secret is properly formulated in the Secrets Panel.
+                    Protip: Verify that your NVIDIA_API_KEY is set correctly in the environment variables.
                   </div>
                 </div>
               </motion.div>
