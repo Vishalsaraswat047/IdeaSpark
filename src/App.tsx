@@ -173,7 +173,7 @@ export default function App() {
     } catch (err: any) {
       const errorMessage: ChatMessage = {
         role: "model",
-        text: "⚠️ Core System Error: " + (err.message || "Unable to parse request. Please verify GEMINI_API_KEY."),
+        text: "⚠️ Core System Error: " + (err.message || "Unable to parse request. Please verify NVIDIA_API_KEY."),
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
       setChatMessages((prev) => ({

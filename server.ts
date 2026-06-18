@@ -2,7 +2,6 @@ import express from "express";
 import path from "path";
 import fs from "fs/promises";
 import { fileURLToPath } from "url";
-import { createServer as createViteServer } from "vite";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -236,9 +235,11 @@ app.delete("/api/ideas/:id", async (req, res) => {
   }
 });
 
-// Setup Vite Dev Server / Static Assets build output
-async function startServer() {
+const isVercel = process.env.VERCEL === "1";
+
+if (!isVercel) {
   if (process.env.NODE_ENV !== "production") {
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
@@ -255,6 +256,12 @@ async function startServer() {
   app.listen(PORT, "0.0.0.0", () => {
     console.log(`IdeaSpark AI backend server rolling on http://localhost:${PORT}`);
   });
+} else {
+  const distPath = path.join(process.cwd(), "dist");
+  app.use(express.static(distPath));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(distPath, "index.html"));
+  });
 }
 
-startServer();
+export default app;
